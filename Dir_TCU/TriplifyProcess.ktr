@@ -69,7 +69,7 @@
   <notepads>
   </notepads>
   <order>
-  <hop> <from>CSV file input</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Replace in string</from><to>Filter rows CPF</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows CPF</from><to>Filter rows CNPJ</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows CNPJ</from><to>Erros</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Replace in string</to><enabled>Y</enabled> </hop>  <hop> <from>Base URI</from><to>URI Resource</to><enabled>Y</enabled> </hop>  <hop> <from>Data Property Mapping Empresa</from><to>scape</to><enabled>Y</enabled> </hop>  <hop> <from>Formula</from><to>Data Property Mapping Empresa</to><enabled>Y</enabled> </hop>  <hop> <from>Formula 2</from><to>Triplas Data Property</to><enabled>Y</enabled> </hop>  <hop> <from>Triplas Data Property</from><to>Saida RDF</to><enabled>Y</enabled> </hop>  <hop> <from>URI Resource</from><to>Formula</to><enabled>Y</enabled> </hop>  <hop> <from>scape</from><to>Formula 2</to><enabled>Y</enabled> </hop>  <hop> <from>Base URI 2</from><to>URI Resource 2</to><enabled>Y</enabled> </hop>  <hop> <from>Formula 3</from><to>Data Property Mapping PeFisica</to><enabled>Y</enabled> </hop>  <hop> <from>URI Resource 2</from><to>Formula 3</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows CNPJ</from><to>Base URI</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows CPF</from><to>Base URI 2</to><enabled>Y</enabled> </hop>  <hop> <from>Data Property Mapping PeFisica</from><to>scape</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>CSV file input</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Replace in string</from><to>Filter rows CPF</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows CPF</from><to>Filter rows CNPJ</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows CNPJ</from><to>Erros</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Replace in string</to><enabled>Y</enabled> </hop>  <hop> <from>Base URI</from><to>URI Resource</to><enabled>Y</enabled> </hop>  <hop> <from>Data Property Mapping Empresa</from><to>scape</to><enabled>Y</enabled> </hop>  <hop> <from>Formula</from><to>Data Property Mapping Empresa</to><enabled>Y</enabled> </hop>  <hop> <from>Formula 3 </from><to>Triplas Data Property</to><enabled>Y</enabled> </hop>  <hop> <from>Triplas Data Property</from><to>Saida RDF</to><enabled>Y</enabled> </hop>  <hop> <from>URI Resource</from><to>Formula</to><enabled>Y</enabled> </hop>  <hop> <from>scape</from><to>Formula 3 </to><enabled>Y</enabled> </hop>  <hop> <from>Base URI 2</from><to>URI Resource 2</to><enabled>Y</enabled> </hop>  <hop> <from>Formula 2</from><to>Data Property Mapping PeFisica</to><enabled>Y</enabled> </hop>  <hop> <from>URI Resource 2</from><to>Formula 2</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows CNPJ</from><to>Base URI</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows CPF</from><to>Base URI 2</to><enabled>Y</enabled> </hop>  <hop> <from>Data Property Mapping PeFisica</from><to>scape</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Base URI</name>
     <type>Constant</type>
@@ -710,7 +710,7 @@
     </step>
 
   <step>
-    <name>Formula 2</name>
+    <name>Formula 3 </name>
     <type>Formula</type>
     <description/>
     <distribute>Y</distribute>
@@ -735,7 +735,7 @@
     </step>
 
   <step>
-    <name>Formula 3</name>
+    <name>Formula 2</name>
     <type>Formula</type>
     <description/>
     <distribute>Y</distribute>
