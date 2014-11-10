@@ -25,4 +25,4 @@ Linked Data Integration é um projeto de pesquisa que utiliza o ***Ketlle*** com
 
  - Para executar a Transformation selecione a opção **Action > Run** ou **F9**.  Aparecerá uma tela de configuração, basta selecionar a opção **Launch**.	
 
-Ver também: (http://greco.ppgi.ufrj.br/dwtutoriais/)
+Ver também: http://greco.ppgi.ufrj.br/dwtutoriais/
