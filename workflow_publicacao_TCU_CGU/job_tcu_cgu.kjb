@@ -118,7 +118,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>557</xloc>
-      <yloc>75</yloc>
+      <yloc>77</yloc>
       </entry>
     <entry>
       <name>Sucesso</name>
@@ -127,8 +127,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>666</xloc>
-      <yloc>75</yloc>
+      <xloc>667</xloc>
+      <yloc>74</yloc>
       </entry>
     <entry>
       <name>Limpa Arquivos de Log</name>
@@ -170,7 +170,7 @@
       <type>WRITE_TO_LOG</type>
       <logmessage/>
       <loglevel>Basic</loglevel>
-      <logsubject>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;Logs&#x2f;log_cgu.txt</logsubject>
+      <logsubject>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;Logs&#x2f;problems&#x2f;log_error_cgu.txt</logsubject>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -182,8 +182,8 @@
       <description/>
       <type>WRITE_TO_LOG</type>
       <logmessage/>
-      <loglevel>Basic</loglevel>
-      <logsubject>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;Logs&#x2f;log_tcu.txt</logsubject>
+      <loglevel>Detailed</loglevel>
+      <logsubject>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;Logs&#x2f;problems&#x2f;log_error_tcu.txt</logsubject>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -219,15 +219,6 @@
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Transf CGU</from>
-      <to>Sucesso</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
     <hop>
@@ -273,6 +264,15 @@
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Transf CGU</from>
+      <to>Sucesso</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
   </hops>

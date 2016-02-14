@@ -1,0 +1,47 @@
+<Silk>
+        <Prefixes>
+      <Prefix id="rdf" namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/><Prefix id="rdfs" namespace="http://www.w3.org/2000/01/rdf-schema#"/><Prefix id="owl" namespace="http://www.w3.org/2002/07/owl#"/><Prefix id="db" namespace="http://dbpedia.org/resource/"/><Prefix id="foaf" namespace="http://xmlns.com/foaf/0.1/"/><Prefix id="tcu" namespace="http://arida.ufc.br/tcu/vocab/resource/"/><Prefix id="cgu" namespace="http: //arida.ufc.br/cgu/vocab/resource"/><Prefix id="time" namespace="http://www.w3.org/2006/time#"/><Prefix id="dc" namespace="http://purl.org/dc/terms/source"/>
+    </Prefixes>
+        <DataSources>
+          <Dataset id="dataset_cgu" type="file">
+            <Param name="file" value="/home/salomao/MEGA/tcc2/workflow_publicacao_TCU_CGU/Results/output_cgu.nt"/><Param name="format" value="N-TRIPLE"/><Param name="graph" value=""/>
+          </Dataset><Dataset id="dataset_tcu" type="file">
+            <Param name="file" value="/home/salomao/MEGA/tcc2/workflow_publicacao_TCU_CGU/Results/output_tcu.nt"/><Param name="format" value="N-TRIPLE"/><Param name="graph" value=""/>
+          </Dataset>
+        </DataSources>
+        <Interlinks>
+          <Interlink id="apenas_cpf_cnpj">
+        <SourceDataset dataSource="dataset_cgu" var="a">
+        <RestrictTo>
+          {?a ?p ?v} .
+        </RestrictTo>
+      </SourceDataset>
+        <TargetDataset dataSource="dataset_tcu" var="b">
+        <RestrictTo>
+          {?b ?p ?v} .
+        </RestrictTo>
+      </TargetDataset>
+        <LinkageRule linkType="owl:sameAs">
+        <Aggregate id="unnamed_7" required="false" weight="1" type="min">
+            <Compare id="unnamed_5" required="false" weight="1" metric="levenshteinDistance" threshold="0.0" indexing="true">
+            <Input id="unnamed_3" path="?b/db:CPF"/><Input id="unnamed_2" path="?a/db:CPF"/><Param name="minChar" value="0"/><Param name="maxChar" value="z"/>
+          </Compare><Compare id="unnamed_6" required="false" weight="1" metric="levenshteinDistance" threshold="0.0" indexing="true">
+            <Input id="unnamed_4" path="?b/db:CNPJ"/><Input id="unnamed_1" path="?a/db:CNPJ"/><Param name="minChar" value="0"/><Param name="maxChar" value="z"/>
+          </Compare>
+          </Aggregate>
+        <Filter/>
+      </LinkageRule>
+        <Outputs>
+          <Output id="output_silk"></Output>
+        </Outputs>
+      </Interlink>
+        </Interlinks>
+        <Transforms>
+          
+        </Transforms>
+        <Outputs>
+          <Dataset id="output_silk" type="file">
+            <Param name="file" value="output_silk.nt"/><Param name="format" value="N-TRIPLE"/><Param name="graph" value=""/>
+          </Dataset>
+        </Outputs>
+      </Silk>

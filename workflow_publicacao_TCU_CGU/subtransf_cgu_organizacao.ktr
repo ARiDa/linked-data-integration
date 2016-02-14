@@ -96,8 +96,10 @@
   <hop> <from>Join Rows &#x28;cartesian product&#x29;</from><to>RestrigidoPessoa VS Restri&#xe7;&#xe3;o</to><enabled>Y</enabled> </hop>
   <hop> <from>Obj. Property Restricao VS Restritor</from><to>Output Object Property Restricao VS Restritor</to><enabled>Y</enabled> </hop>
   <hop> <from>Get URI - Provenance vs Restri&#xe7;&#xe3;o</from><to>Obj. Property Restricao VS Restritor</to><enabled>Y</enabled> </hop>
-  <hop> <from>SelecionarRestrigidoOrg.</from><to>Add sequence</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get URI - RestrigidoOrganizacao X Restri&#xe7;&#xe3;o</from><to>Data Property RestringidoOrganizacao</to><enabled>Y</enabled> </hop>
+  <hop> <from>SelecionarRestrigidoOrg.</from><to>Unique</to><enabled>Y</enabled> </hop>
+  <hop> <from>Unique</from><to>Add sequence</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get URI - RestrigidoOrganizacao X Restri&#xe7;&#xe3;o</from><to>Unique 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Unique 2</from><to>Data Property RestringidoOrganizacao</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Add sequence</name>
@@ -171,7 +173,7 @@
   <entry>
     <string>RDF_TYPE_URIS</string>
     <list>
-      <string>http://xmlns.com/foaf/0.1/organization</string>
+      <string>http://xmlns.com/foaf/0.1/Organization</string>
     </list>
   </entry>
   <entry>
@@ -1173,6 +1175,52 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>286</xloc>
       <yloc>164</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Unique</name>
+    <type>UniqueRowsByHashSet</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <store_values>Y</store_values>
+      <reject_duplicate_row>N</reject_duplicate_row>
+      <error_description/>
+    <fields>      <field>        <name>cnpj</name>
+        </field>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>278</xloc>
+      <yloc>340</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Unique 2</name>
+    <type>UniqueRowsByHashSet</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <store_values>Y</store_values>
+      <reject_duplicate_row>N</reject_duplicate_row>
+      <error_description/>
+    <fields>      <field>        <name>cnpj</name>
+        </field>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>787</xloc>
+      <yloc>452</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

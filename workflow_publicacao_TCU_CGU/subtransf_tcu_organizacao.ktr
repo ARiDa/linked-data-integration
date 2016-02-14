@@ -96,8 +96,10 @@
   <hop> <from>Join Rows &#x28;cartesian&#x29;</from><to>RestrigidoPes. VS Restri&#xe7;&#xe3;o</to><enabled>Y</enabled> </hop>
   <hop> <from>Obj. Property Restricao VS Restritor</from><to>Output Object Property Restricao VS Restritor</to><enabled>Y</enabled> </hop>
   <hop> <from>Provenance e Restri&#xe7;&#xe3;o</from><to>Obj. Property Restricao VS Restritor</to><enabled>Y</enabled> </hop>
-  <hop> <from>SelecionarRestrigidoOrg.</from><to>Add sequence</to><enabled>Y</enabled> </hop>
-  <hop> <from>URI - RestrigidoOrg. e Restri&#xe7;&#xe3;o</from><to>Data Property RestringidoOrganizacao</to><enabled>Y</enabled> </hop>
+  <hop> <from>SelecionarRestrigidoOrg.</from><to>Unique</to><enabled>Y</enabled> </hop>
+  <hop> <from>Unique</from><to>Add sequence</to><enabled>Y</enabled> </hop>
+  <hop> <from>Unique 2</from><to>Data Property RestringidoOrganizacao</to><enabled>Y</enabled> </hop>
+  <hop> <from>URI - RestrigidoOrg. e Restri&#xe7;&#xe3;o</from><to>Unique 2</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Add sequence</name>
@@ -171,7 +173,7 @@
   <entry>
     <string>RDF_TYPE_URIS</string>
     <list>
-      <string>http://xmlns.com/foaf/0.1/organization</string>
+      <string>http://xmlns.com/foaf/0.1/Organization</string>
     </list>
   </entry>
   <entry>
@@ -427,114 +429,6 @@
     </step>
 
   <step>
-    <name>Provenance e Restri&#xe7;&#xe3;o</name>
-    <type>Calculator</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-       <calculation><field_name>uri_restricao</field_name>
-<calc_type>ADD</calc_type>
-<field_a>prefix_restricao</field_a>
-<field_b>restricao_id</field_b>
-<field_c/>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
-       <calculation><field_name>restricao_label</field_name>
-<calc_type>ADD</calc_type>
-<field_a>restricao</field_a>
-<field_b>restricao_id</field_b>
-<field_c/>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>620</xloc>
-      <yloc>164</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>URI - RestrigidoOrg. e Restri&#xe7;&#xe3;o</name>
-    <type>Calculator</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-       <calculation><field_name>uri_restringido_organizacao</field_name>
-<calc_type>ADD</calc_type>
-<field_a>prefix_restringido_organizacao</field_a>
-<field_b>id_restrigido_organizacao</field_b>
-<field_c/>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
-       <calculation><field_name>uri_restricao</field_name>
-<calc_type>ADD</calc_type>
-<field_a>prefix_restricao</field_a>
-<field_b>restricao_id</field_b>
-<field_c/>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
-       <calculation><field_name>restrigido_organizacao_label</field_name>
-<calc_type>ADD</calc_type>
-<field_a>restrigido_organicao</field_a>
-<field_b>id_restrigido_organizacao</field_b>
-<field_c/>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>655</xloc>
-      <yloc>339</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>Input Organizacao</name>
     <type>MappingInput</type>
     <description/>
@@ -622,8 +516,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>34</xloc>
-      <yloc>165</yloc>
+      <xloc>100</xloc>
+      <yloc>72</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -935,6 +829,53 @@
     </step>
 
   <step>
+    <name>Provenance e Restri&#xe7;&#xe3;o</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>uri_restricao</field_name>
+<calc_type>ADD</calc_type>
+<field_a>prefix_restricao</field_a>
+<field_b>restricao_id</field_b>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>restricao_label</field_name>
+<calc_type>ADD</calc_type>
+<field_a>restricao</field_a>
+<field_b>restricao_id</field_b>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>620</xloc>
+      <yloc>164</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>Provenance vs Restri&#xe7;&#xe3;o</name>
     <type>JoinRows</type>
     <description/>
@@ -1049,8 +990,8 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>145</xloc>
-      <yloc>343</yloc>
+      <xloc>97</xloc>
+      <yloc>341</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1117,8 +1058,8 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>145</xloc>
-      <yloc>163</yloc>
+      <xloc>97</xloc>
+      <yloc>165</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1194,6 +1135,113 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>286</xloc>
       <yloc>164</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>URI - RestrigidoOrg. e Restri&#xe7;&#xe3;o</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>uri_restringido_organizacao</field_name>
+<calc_type>ADD</calc_type>
+<field_a>prefix_restringido_organizacao</field_a>
+<field_b>id_restrigido_organizacao</field_b>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>uri_restricao</field_name>
+<calc_type>ADD</calc_type>
+<field_a>prefix_restricao</field_a>
+<field_b>restricao_id</field_b>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>restrigido_organizacao_label</field_name>
+<calc_type>ADD</calc_type>
+<field_a>restrigido_organicao</field_a>
+<field_b>id_restrigido_organizacao</field_b>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>655</xloc>
+      <yloc>339</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Unique</name>
+    <type>UniqueRowsByHashSet</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <store_values>Y</store_values>
+      <reject_duplicate_row>N</reject_duplicate_row>
+      <error_description/>
+    <fields>      <field>        <name>cnpj</name>
+        </field>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>213</xloc>
+      <yloc>342</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Unique 2</name>
+    <type>UniqueRowsByHashSet</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <store_values>Y</store_values>
+      <reject_duplicate_row>N</reject_duplicate_row>
+      <error_description/>
+    <fields>      <field>        <name>cnpj</name>
+        </field>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>660</xloc>
+      <yloc>447</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
